@@ -78,7 +78,10 @@
   src: url('../fonts/heuristica/Heuristica-Regular.otf');
 }
 
-
+@font-face {
+  font-family: heavydata;
+  src: url('../fonts/Heavy-Data/heavy_data.ttf');
+}
 
 
 
