@@ -1,28 +1,8 @@
 // wonderful blue (68, 133, 245)
 @import ../global
 
-// general layout
-$content-padding: 60px
-$blank-content-width: 180px
-
-// studies box stuff
-$computer-science-studies-box-height: 260px
-$math-studies-box-height: 260px
-$physics-studies-box-height: 180px
-$psychology-studies-box-height: 200px
-$studies-icon-width: 240px
-
-// project box stuff
-$project-box-height: 320px
-$project-box-padding: 20px
-
-// book box stuff
-$book-box-padding: 20px
-$books-per-line: 3
-
 .top-wrapper
   width: 100%
-
 
 @media (max-width: $container-width)
   .top-wrapper
@@ -41,88 +21,37 @@ $books-per-line: 3
   color: white
   margin-left: auto
   margin-right: auto
-  font-family: envycoder
-  padding-top: 110px
+  padding-top: 112px
   font-weight: bold
   .title
+    font-family: envycoder
     .white-text
       color: white
     .blue-text
       color: rgb(68, 133, 245)
   .sub-title
-    font-size: 90px
+    font-family: disco
+    font-size: 66px
     color: rgb(143, 144, 138)
 
-.navigation-panel
-  z-index: 2
-  position: fixed
-  top: 125px
-  right: 0px
-  width: 160px
-  ul
-    padding: 0
-    +border-left-radius(5px)
-    list-style-type: none
-    background-color: rgba(98, 74, 46, 0.6)
-    li
-      height: 60px
-      line-height: 60px
-      padding-right: 40px
-      padding-left: 40px
-      cursor: pointer
-      +border-left-radius(5px)
-      &:hover
-        background-color: rgba(98, 74, 46, 0.6)
-      span
-        line-height: normal
-        vertical-align: middle
-        font-family: avantgarde
-        color: white
-
-@media (max-width: $container-width)
-  .navigation-panel
-    display: none
-
-.studies-box
-  width: $container-width - $blank-content-width
-  margin-top: 20px
-  .icon
-    float: left
-    width: $studies-icon-width
-    i
-      line-height: normal
-      vertical-align: middle
-      width: $studies-icon-width
-      text-align: center
-      font-size: 120px
-  .studies-content-wrapper
-    float: right
-    width: $container-width - $blank-content-width - $studies-icon-width
-    overflow-y: hidden
-    .studies-box-title
-      cursor: default
-      +unselectable()
-      font-size: 50px
-      font-family: sourcecodepro
-    .studies
-      .study-item
-        font-size: 24px
-        font-family: alphaecho
-        padding: 5px
-        cursor: default
-        +unselectable()
-        // &:hover
-          // background-color: rgba(98, 74, 46, 0.6)
-
 .middle-section
+  width: $container-width
+  margin-left: auto
+  margin-right: auto
   .title
     cursor: default
     +unselectable()
     font-size: 80px
-    text-align: left
-    font-family: comfortaa-light
-    // &:first
-    margin-top: 28px
+    text-align: center
+    font-family: comfortaa-bold
+  .title.first-title
+    color: #30FEAB
+  .title.second-title
+    color: #FF6E30
+  .title.third-title
+    color: #FFB630
+  .title.fourth-title
+    color: rgb(68, 133, 245)
   .subtitle
     cursor: default
     +unselectable()
@@ -133,163 +62,13 @@ $books-per-line: 3
   .text-content
     font-size: 16px
     font-family: opensans
-  .photo-timeline
-    margin-top: 40px
-    img
-      display: inline-block
-      width: ($container-width - $blank-content-width - 50px) / 5
-      margin-right: 10px
-      height: 110px
-  .computer-science
-    @extend .studies-box
-    height: $computer-science-studies-box-height
-    .icon
-      line-height: $computer-science-studies-box-height
-      height: $computer-science-studies-box-height
-    .studies-content-wrapper
-      height: $computer-science-studies-box-height
-  .math
-    @extend .studies-box
-    height: $math-studies-box-height
-    .icon
-      line-height: $math-studies-box-height
-      height: $math-studies-box-height
-    .studies-content-wrapper
-      height: $math-studies-box-height
-  .physics
-    @extend .studies-box
-    height: $physics-studies-box-height
-    .icon
-      line-height: $physics-studies-box-height
-      height: $physics-studies-box-height
-    .studies-content-wrapper
-      height: $physics-studies-box-height
-  .psychology
-    @extend .studies-box
-    height: $psychology-studies-box-height
-    .icon
-      line-height: $psychology-studies-box-height
-      height: $psychology-studies-box-height
-    .studies-content-wrapper
-      height: $psychology-studies-box-height
-
-
-.middle-section#about
-  .title
-    .linkedin-link
-      color: rgb(2, 116, 179)
-      cursor: pointer
-      &:hover
-        color: #40BBFF
-  .text-content
-    margin-top: 28px
-
-.middle-section#studies
-  .text-content
-    margin-top: 10px
-
-.project-box
-  +border-radius(2px)
-  cursor: pointer
-  height: $project-box-height
-  width: ($container-width - $blank-content-width - $project-box-padding * 4) / 2
-  margin: $project-box-padding $project-box-padding
-  position: relative
-  border-bottom: 3px solid white
-  &:hover
-    border-bottom: 3px solid blue
-  .project-description-wrapper
-    background-color: white
-    width: ($container-width - $blank-content-width - $project-box-padding * 4) / 2
-    position: absolute
-    bottom: 0
-    .project-title
-      color: gray
-      text-align: center
-      font-size: 40px
-      font-family: sourcecodepro
-
-.middle-section#projects
-  .text-content
-    margin-top: 28px
-  .projects-wrapper
-    margin-top: 20px
-    .educode
-      @extend .project-box
-      background-image: url('../../imgs/projects/educode.jpg')
-      background-size: 100%
-      float: left
-    .the-seed
-      @extend .project-box
-      float: right
-    .park-ave
-      @extend .project-box
-      background-image: url('../../imgs/projects/parkave.jpg')
-      background-size: 100%
-      float: left
-      margin-bottom: 60px
-    .nsgocg
-      @extend .project-box
-      background-image: url('../../imgs/projects/nsgocg.jpg')
-      background-size: 100%
-      float: right
-      margin-bottom: 60px
-
-.middle-section#code
-  .title
-    .github-link
-      color: rgb(66, 192, 251)
-      cursor: pointer
-      &:hover
-        color: #185FAB
-  .text-content
-    margin-top: 28px
-
-.book-box
-  height: 300px
-  width: ($container-width - $blank-content-width - $book-box-padding * ($books-per-line * 2)) / $books-per-line - 1px
-  margin: $book-box-padding
-  float: left
-  background-size: 100% 100%
-  +border-radius(2px)
-
-.book-box#outliers
-  background-image: url('../../imgs/books/outliers.jpg')
-
-.book-box#zen-and-the-art
-  background-image: url('../../imgs/books/zen.jpg')
-
-.book-box#nisi
-  background-image: url('../../imgs/books/nisi.jpg')
-
-.book-box#powerofhabit
-  background-image: url('../../imgs/books/powerofhabit.jpg')
-
-.book-box#steallikeanartist
-  background-image: url('../../imgs/books/steallikeanartist.jpg')
-
-.book-box#algorithms
-  background-image: url('../../imgs/books/algorithms.jpg')
-
-.middle-section#books
-  .text-content
-    margin-top: 10px
 
 .content-wrapper
-  float: left
-  width: $container-width - $blank-content-width
-  margin-bottom: 50px
+  width: 100%
+  padding: 20px 0
 
-.blank-content
-  float: right
-  width: $blank-content-width
-
-.section-divider
-  border-bottom: 1px solid gray
-  margin-top: 60px
-  clear: both
-
-
+.content-wrapper:nth-child(odd)
+  background-color: #e0eee0
 
 
 

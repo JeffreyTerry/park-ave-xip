@@ -44,6 +44,11 @@
 }
 
 @font-face {
+  font-family: comfortaa-bold;
+  src: url('../fonts/Comfortaa/Comfortaa_Bold.ttf');
+}
+
+@font-face {
   font-family: delicious;
   src: url('../fonts/delicious-123/Delicious-Roman.ttf');
 }
@@ -83,6 +88,15 @@
   src: url('../fonts/Heavy-Data/heavy_data.ttf');
 }
 
+@font-face {
+  font-family: prime;
+  src: url('../fonts/prime/Prime Regular.otf');
+}
+
+@font-face {
+  font-family: prime-light;
+  src: url('../fonts/prime/Prime Light.otf');
+}
 
 
 
