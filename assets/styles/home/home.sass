@@ -1,3 +1,4 @@
+// wonderful blue (68, 133, 245)
 @import ../global
 
 // general layout
@@ -30,21 +31,27 @@ $books-per-line: 3
     width: $container-width
 
 .top
-  background: url("../../imgs/home.jpg") 50% 0px no-repeat fixed
+  background: rgb(39, 40, 34) 50% 0px no-repeat fixed
   text-align: center
   width: 100%
   height: 581px
 
 .top-text
-  width: $container-width
-  font-size: 100px
+  font-size: 120px
   color: white
-  position: absolute
-  top: 220px
-  left: 60px
-  // top: 180px
-  // left: 12%
-  font-family: heavydata
+  margin-left: auto
+  margin-right: auto
+  font-family: envycoder
+  padding-top: 110px
+  font-weight: bold
+  .title
+    .white-text
+      color: white
+    .blue-text
+      color: rgb(68, 133, 245)
+  .sub-title
+    font-size: 90px
+    color: rgb(143, 144, 138)
 
 .navigation-panel
   z-index: 2
