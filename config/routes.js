@@ -1,6 +1,5 @@
 var _ = require('underscore'),
-    lot = require('../app/controllers/lot'),
-    blog = require('../app/controllers/blog');
+    lot = require('../app/controllers/lot');
 
 // Stores a dictionary with route paths as keys and their corresponding static html files as values.
 var URLToFileMap = {
@@ -30,12 +29,10 @@ module.exports = function(app){
   // app.post('/api/lot/spotcount/:lot_id', lot.update);  // Send JSON {spotcount: new_spotcount} (e.g. {spotcount: 146})
   app.post('/api/lot/increment/:lot_id', lot.incrementSpotcount);
   app.post('/api/lot/decrement/:lot_id', lot.decrementSpotcount);
+  app.post('/api/lot/increment/:lot_id/:num', lot.incrementSpotcount);
+  app.post('/api/lot/decrement/:lot_id/:num', lot.decrementSpotcount);
 
   app.get( '/api/lot/all', lot.getAll);  // Returns all of the lots and their data
-
-  // Blog stuff
-  app.get( '/blog', blog.index);
-  app.post('/blog/new', blog.create);
 };
 
 

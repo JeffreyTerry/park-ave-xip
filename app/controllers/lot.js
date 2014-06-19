@@ -9,6 +9,7 @@ exports.getAll = function(req, res){
 exports.new = function(req, res){
   var lot = new Lot(req.body);
   lot.save(function(err){
+    res.header('Access-Control-Allow-Origin', '*');
     if(err) res.status(500).json({'err': err});
     else res.status(200).json({'lot': lot});
   });
@@ -22,17 +23,20 @@ exports.update = function(req, res){
 };
 
 exports.incrementSpotcount = function(req, res){
-  Lot.findByIdAndUpdate(req.params.lot_id, {$inc: {spotcount: 1}}, function(err){
+  if(!req.params.num) req.params.num = 1;
+  Lot.findByIdAndUpdate(req.params.lot_id, {$inc: {spotcount: req.params.num}}, function(err){
     if(err) res.status(500).json({'err': err});
     else res.status(200).json({'msg': 'success'});
   });
-}
+};
+
 exports.decrementSpotcount = function(req, res){
-  Lot.findByIdAndUpdate(req.params.lot_id, {$inc: {spotcount: -1}}, function(err){
+  if(!req.params.num) req.params.num = 1;
+  Lot.findByIdAndUpdate(req.params.lot_id, {$inc: {spotcount: -req.params.num}}, function(err){
     if(err) res.status(500).json({'err': err});
     else res.status(200).json({'msg': 'success'});
   });
-}
+};
 
 
 
