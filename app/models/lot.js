@@ -5,7 +5,9 @@ var lotSchema = mongoose.Schema({
   latitude: {type: Number, required: true},
   longitude: {type: Number, required: true},
   spotcount: {type: Number, required: true},
-  capacity: {type: Number, required: true}
+  capacity: {type: Number, required: true},
+  increments: {type: Number}
+  decrements: {type: Number}
 });
 
 exports.model = mongoose.model('lot', lotSchema);
